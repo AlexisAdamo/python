@@ -1,5 +1,5 @@
 #imprimir la tabla del 5
-num = 5
-for num in range(51):
-    masCinco = num + 5
-    print(masCinco) 
+for ini in range(1,11):
+    operacion =  (5 * ini)
+    
+    print(operacion)
