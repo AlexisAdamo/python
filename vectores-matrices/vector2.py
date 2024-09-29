@@ -9,4 +9,6 @@ random.randit(1,100) > genera un numero aleatorio para cada elemento de vector
 '''
 vector2 = (vector.insert(5,0))
 print(vector)
-print(vector2)
+#print(vector2)
+
+
