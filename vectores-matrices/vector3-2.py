@@ -3,7 +3,7 @@
 import numpy as np
 
 matriz = np.random.randint(1,51,(4,4))
-print(matriz)
+print(f"matriz original'\n", matriz)
 
 matriz[matriz %2 == 0] = 0
-print(matriz)    
+print(f"matriz modificada\n", matriz)   
