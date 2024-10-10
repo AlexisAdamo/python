@@ -1,0 +1,8 @@
+Selecciona una opcion:
+    1. Sumar
+    2. Restar
+    3. multiplicar
+    4. dividir
+    5. potencia
+    6. raiz
+    
