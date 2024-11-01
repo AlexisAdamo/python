@@ -23,3 +23,4 @@ def numNacisista(num):
 
 
 numNacisista(13)
+numNacisista(153)
