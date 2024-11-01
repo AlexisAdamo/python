@@ -58,7 +58,7 @@ print(Propiedad.mayorNumeracion(casa_1,casa_2))
             - cantidad_ambientes : int
 
         funcion: 
-            almacenar datos de inmuebles y analizarlos, si la propiedad es anterior a 1870, detiene la ejecucion
+            almacenar datos de inmuebles y analizarlos, si la propiedad es anterior a 1870 y que no tenga 0 ambientes, detiene la ejecucion
 
         operaciones:
             - mayorNumeracion:
