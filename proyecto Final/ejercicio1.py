@@ -18,7 +18,7 @@ la que tiene mayor cantidad de likes. En caso contrario debe lanzar una excepci√
 class Cancion:
     def __init__ (self, nombreCancion='', artista='', generoMusical='',duracion=0, anioEdicion=0, NumeroLikes=0):
         if nombreCancion is None or artista is None:
-            raise Exception ('Algun valor es incorrecto:\n nombre de cancion y artista No pueden estar vacios y los generos permitidos son Rock, Jazz, Blues, Funk, Reggae y Rap) ')
+            raise Exception ('Algun valor es incorrecto:\n nombre de cancion y artista No pueden estar vacios')
         self.nombreCancion = nombreCancion
         self.artista = artista
         self.generoMusical=generoMusical
