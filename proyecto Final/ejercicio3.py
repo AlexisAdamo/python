@@ -23,5 +23,5 @@ def separar_ordenar_pares_impares(lista):
     print("Números pares en orden descendente:", pares_desc)
     print("Números impares en orden descendente:", impares_desc)
 # Prueba
-lista = (5, 3, 8, 6, 7, 2)
+lista = [5, 3, 8, 6, 7, 2]#Error de dato: () usa una tupla, [] las listas
 separar_ordenar_pares_impares(lista)
