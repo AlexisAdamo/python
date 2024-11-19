@@ -17,10 +17,10 @@ la que tiene mayor cantidad de likes. En caso contrario debe lanzar una excepciÃ
 
 class Cancion:
 
-
+    generosPermitidos =  ["Rock","Jazz", "Blues", "Funk", "Reggae", "Rap"]
     def __init__ (self, nombreCancion='', artista='', generoMusical='',duracion=0, anioEdicion=0, NumeroLikes=0):
-        #if generoMusical != generosPermitidos():
-        #    raise Exception ('Algun valor es incorrecto:\n nombre de cancion y artista No pueden estar vacios')
+        if generoMusical not in self.generosPermitidos:
+            raise Exception ('Genero musical inconrrecto:\n Los generos permitidos son:Rock, Jazz, Blues, Funk, Reggae y Rap')
         self.nombreCancion = nombreCancion
         self.artista = artista
         self.generoMusical=generoMusical
@@ -28,13 +28,10 @@ class Cancion:
         self.anioEdicion=anioEdicion
         self.numeroLikes=NumeroLikes
     
-    def generosPermitidos():
-        ["Rock","Jazz", "Blues", "Funk", "Reggae", "Rap"]
-          
-          
+    
     def __str__(self):
         #return f'Nombre Cancion: {self.nombreCancion}, Artista: {self.artista}, Genero Musical: {self.generoMusical}, Duracion: {self.duracion}, AÃ±o Edicion: {self.anioEdicion}, Numero de Likes: {self.numeroLikes}'
-        return (f"{self.nombreCancion} - {self.artista} {self.duracion}")
+        return (f"Nombre Cancion: {self.nombreCancion} - Artista: {self.artista} (Duracion:{self.duracion})")
         
     def mayorDuracion(cancion_1, cancion_2):
         if cancion_1.duracion > cancion_2.duracion:
@@ -59,7 +56,7 @@ class Cancion:
                 if cancionMasVotada == cancion_1.numeroLikes:
                     print(f'la cancion mas votada es: {cancion_1.nombreCancion} - {cancion_1.numeroLikes}')
                 else:
-                    if cancionMasVotada == cancion_2:
+                    if cancionMasVotada == cancion_2.numeroLikes:
                         print(f'la cancion mas votada es: {cancion_2.nombreCancion} - {cancion_2.numeroLikes}')
             
     
@@ -68,6 +65,6 @@ cancion_1=Cancion("JIJIJI",'Patricio Rey',"Rock",2.34, 2005, 75000)
 cancion_2=Cancion('Gualicho','Patricio Rey',"Rock",2.33, 2005, 105000) 
 print(cancion_1)
 print(cancion_2)
-print(Cancion.mayorDuracion(cancion_1,cancion_2))
+#print(Cancion.mayorDuracion(cancion_1,cancion_2))
 print(Cancion.masVotada(cancion_1,cancion_2))
 #print(Cancion.agregarLikes(cancion_1,1000))
