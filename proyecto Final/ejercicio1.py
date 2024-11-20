@@ -18,6 +18,8 @@ la que tiene mayor cantidad de likes. En caso contrario debe lanzar una excepci√
 class Cancion:
 
     generosPermitidos =  ["Rock","Jazz", "Blues", "Funk", "Reggae", "Rap"]
+    
+    
     def __init__ (self, nombreCancion='', artista='', generoMusical='',duracion=0, anioEdicion=0, NumeroLikes=0):
         if generoMusical not in self.generosPermitidos:
             raise Exception ('Genero musical inconrrecto:\n Los generos permitidos son:Rock, Jazz, Blues, Funk, Reggae y Rap')
@@ -41,11 +43,10 @@ class Cancion:
         else:
             print (f"Ambas canciones tienen la misma duracion: {cancion_1.nombreCancion} - {cancion_1.duracion} = {cancion_2.nombreCancion} - {cancion_2.duracion}")
             
-    '''def agregarLikes(cancion_1,likes):
-        for i in cancion_1.numeroLikes:
-            cancion_1.numeroLikes + likes
-            print(f"La cancion {cancion_1.nombreCancion} tiene ahora {cancion_1.numeroLikes} likes")
-    '''
+    def agregarLikes(cancion_1,likes):
+        nuevosLikes = cancion_1.numeroLikes+likes
+        print(f"La cancion {cancion_1.nombreCancion} tiene ahora {nuevosLikes} likes")
+    
             
     def masVotada(cancion_1, cancion_2):
         if cancion_1.artista != cancion_2.artista:
@@ -65,6 +66,6 @@ cancion_1=Cancion("JIJIJI",'Patricio Rey',"Rock",2.34, 2005, 75000)
 cancion_2=Cancion('Gualicho','Patricio Rey',"Rock",2.33, 2005, 105000) 
 print(cancion_1)
 print(cancion_2)
-#print(Cancion.mayorDuracion(cancion_1,cancion_2))
+print(Cancion.mayorDuracion(cancion_1,cancion_2))
 print(Cancion.masVotada(cancion_1,cancion_2))
-#print(Cancion.agregarLikes(cancion_1,1000))
+print(Cancion.agregarLikes(cancion_2,1001))
