@@ -16,7 +16,7 @@ la que tiene mayor cantidad de likes. En caso contrario debe lanzar una excepciÃ
 '''
 
 class Cancion:
-
+    #Lista para validar Generos permitidos
     generosPermitidos =  ["Rock","Jazz", "Blues", "Funk", "Reggae", "Rap"]
     
     
@@ -35,6 +35,7 @@ class Cancion:
         #return f'Nombre Cancion: {self.nombreCancion}, Artista: {self.artista}, Genero Musical: {self.generoMusical}, Duracion: {self.duracion}, AÃ±o Edicion: {self.anioEdicion}, Numero de Likes: {self.numeroLikes}'
         return (f"Nombre Cancion: {self.nombreCancion} - Artista: {self.artista} (Duracion:{self.duracion})")
         
+    #Funcion que devuelve la cancion de mayor duracion
     def mayorDuracion(cancion_1, cancion_2):
         if cancion_1.duracion > cancion_2.duracion:
             print(f'La cancion: {cancion_1.nombreCancion} es la de mayor duracion: {cancion_1.duracion}')
@@ -43,17 +44,21 @@ class Cancion:
         else:
             print (f"Ambas canciones tienen la misma duracion: {cancion_1.nombreCancion} - {cancion_1.duracion} = {cancion_2.nombreCancion} - {cancion_2.duracion}")
             
+    #funcion que agrega likes a una cancion segun un numero ingresado
     def agregarLikes(cancion_1,likes):
-        nuevosLikes = cancion_1.numeroLikes+likes
-        print(f"La cancion {cancion_1.nombreCancion} tiene ahora {nuevosLikes} likes")
+        if likes < 1: 
+            raise Exception("El numero de Likes tiene que se mayor a 0")
+        else: 
+            nuevosLikes = cancion_1.numeroLikes+likes
+            print(f"La cancion {cancion_1.nombreCancion} tiene ahora {nuevosLikes} likes")
     
-            
+    #Funcion que compara si las canciones son de un mismo artista y devuelve la que tenga mas votos.        
     def masVotada(cancion_1, cancion_2):
         if cancion_1.artista != cancion_2.artista:
             raise Exception ('Solo se puede evaluar canciones de un mismo Artista')
         else:
             if cancion_1.artista == cancion_2.artista and cancion_1.generoMusical == cancion_2.generoMusical:
-                cancionMasVotada = (max(cancion_1.numeroLikes, cancion_2.numeroLikes))
+                cancionMasVotada = (max(cancion_1.numeroLikes, cancion_2.numeroLikes))# obtengo la mayor cantidad de likes con la funcion max.
                 if cancionMasVotada == cancion_1.numeroLikes:
                     print(f'la cancion mas votada es: {cancion_1.nombreCancion} - {cancion_1.numeroLikes}')
                 else:
@@ -63,9 +68,10 @@ class Cancion:
     
         
 cancion_1=Cancion("JIJIJI",'Patricio Rey',"Rock",2.34, 2005, 75000)
-cancion_2=Cancion('Gualicho','Patricio Rey',"Rock",2.33, 2005, 105000) 
-print(cancion_1)
-print(cancion_2)
-print(Cancion.mayorDuracion(cancion_1,cancion_2))
-print(Cancion.masVotada(cancion_1,cancion_2))
-print(Cancion.agregarLikes(cancion_2,1001))
+cancion_1.agregarLikes(10)
+#cancion_2=Cancion('Gualicho','Patricio Rey',"Rock",2.33, 2005, 105000) 
+#print(cancion_1)
+#print(cancion_2)
+#print(Cancion.mayorDuracion(cancion_1,cancion_2))
+#print(Cancion.masVotada(cancion_1,cancion_2))
+#print(Cancion.agregarLikes(cancion_1,-10))
