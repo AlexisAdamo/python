@@ -68,10 +68,9 @@ class Cancion:
     
         
 cancion_1=Cancion("JIJIJI",'Patricio Rey',"Rock",2.34, 2005, 75000)
-cancion_1.agregarLikes(10)
-#cancion_2=Cancion('Gualicho','Patricio Rey',"Rock",2.33, 2005, 105000) 
-#print(cancion_1)
-#print(cancion_2)
-#print(Cancion.mayorDuracion(cancion_1,cancion_2))
-#print(Cancion.masVotada(cancion_1,cancion_2))
-#print(Cancion.agregarLikes(cancion_1,-10))
+cancion_2=Cancion('Gualicho','Patricio Rey',"Rock",2.33, 2005, 105000) 
+print(cancion_1)
+print(cancion_2)
+print(Cancion.mayorDuracion(cancion_1,cancion_2))
+print(Cancion.masVotada(cancion_1,cancion_2))
+print(Cancion.agregarLikes(cancion_1,-10))
